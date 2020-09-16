@@ -35,5 +35,5 @@ Na página de login, é demonstrado a possibilidade do usuário fazer login com 
 Também foi implementado uma tela que demonstra como a aplicação poderia fazer o vínculo de um usuário de sua base com usuário da base da Betha:
 
 <p align="center">
-    <img src="login.png" width="350px" height="350px" />
+    <img src="conta.png" width="250px" height="350px" />
 </p>
