@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style-conta-usuario.css}" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conta do usuário</title>
+</head>
+
+<body>
+<div class="login-page">
+    <div class="form">
+        <h3 class="title-edit">Conta do usuário</h3>
+        <form class="login-form">
+            <div class="mx-30">
+                <div class="mb-avatar">
+                    <div>
+                        <img th:src="${foto}" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="mt-name style-name-avatar">
+                        <span th:text="${usuario.getNome()}"></span>
+                    </div>
+                </div>
+                <div class="label-input">
+                    <div class="style-label">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <input class="style-input" id="nome" th:value="${usuario.getNome()}"/>
+                </div>
+                <div class="label-input">
+                    <div class="style-label">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <input class="style-input" id="email" th:value="${usuario.getEmail()}"/>
+                </div>
+                <div class="label-input">
+                    <div class="style-label">
+                        <label for="celular">Celular</label>
+                    </div>
+                    <input class="style-input" id="celular" th:value="${usuario.getCelular()}"/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <button class="button-betha"><img th:src="@{/img/logo-betha.svg}" class="logo-betha" alt="Logo" /> Desvincular usuário Betha
+        Sistemas</button>
+    <div class="vinculo-betha">
+        <button class="button-access">Salvar alterações</button>
+    </div>
+    <div class="secondary-actions">
+        <span class="font-actions"><a href="url" class="decoration-none">Sair do sistema</a></span>
+    </div>
+</div>
+
+</body>
+
+</html>

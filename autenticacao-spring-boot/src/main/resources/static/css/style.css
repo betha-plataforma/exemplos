@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+    width: 400px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form {
+    background: #FFFFFF;
+    max-width: 400px;
+    text-align: center;
+}
+.title-login{
+    color: #403866;
+    margin-bottom: 40px;
+}
+.pt-30{
+    padding: 30px 0px 0px 0px;
+}
+.font-actions{
+    font-size: 14px;
+}
+.font-color{
+    color: #767676;
+}
+.decoration-none{
+    text-decoration: none;
+    color: #827ffe;
+}
+.decoration-none:active,.form a:active {
+    color: #413EC1;
+}
+.secondary-actions{
+    display: inline-block;
+}
+.margin-bottom{
+    margin-bottom: 45px;
+}
+.margin-check{
+    margin-right: 157px;
+}
+.access-betha{
+    margin-top: 20px;
+    max-width: 400px;
+    text-align: center;
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.button-access {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #A09DFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.button-betha{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #142C48;
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    padding: 13px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.logo-betha{
+    width: 14px;
+    margin-right: 4px;
+}
+.button-betha:hover,.form button:active,.form button:focus {
+    background: #142C48;
+    transition: all 0.4s;
+    opacity: 0.8;
+}
+.button-access:hover,.form button:active,.form button:focus {
+    background: #8979D4;
+    transition: all 0.4s;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}

@@ -1,0 +1,16 @@
+spring:
+  thymeleaf:
+    cache: false
+
+betha:
+  auth:
+    oauth:
+      client:
+        id: "34bf8868-b799-4dea-9eaf-8fa327572423"
+        secret_id: "3fdd79d3-a121-43a6-b2ce-1914372e8d24"
+        redirect: "http://localhost:8080/callback"
+        scopes: "contas-usuarios.suite,user-accounts.suite"
+  services:
+    login: "https://service-login.cloud.betha.com.br/servicelogin"
+    oauth: "https://oauth.cloud.betha.com.br/auth/oauth2"
+    usuarios: "https://useraccounts.cloud.betha.com.br/user-accounts/v0.1/api"

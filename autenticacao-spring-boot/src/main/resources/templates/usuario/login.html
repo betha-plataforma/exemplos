@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" media="screen"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+
+<body>
+<div class="login-page">
+    <div class="form">
+        <h3 class="title-login">LOGIN</h3>
+        <form class="login-form">
+            <div class="px-30">
+                <input type="text" class="style-input" placeholder="Usuário"/>
+                <input type="password" class="style-input" placeholder="Senha"/>
+            </div>
+        </form>
+    </div>
+    <div class="margin-bottom">
+        <div class="secondary-actions margin-check">
+            <label class="checkbox font-actions font-color">
+                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Lembre de mim
+            </label>
+        </div>
+        <div class="secondary-actions">
+            <span class="font-actions"><a href="url" class="decoration-none">Esqueceu a senha?</a></span>
+        </div>
+    </div>
+    <button class="button-access">ENTRAR</button>
+    <form action="/login/betha" method="post">
+        <div class="access-betha">
+            <button class="button-betha"><img th:src="@{/img/logo-betha.svg}" class="logo-betha" alt="Logo"/> ACESSAR COM
+                BETHA SISTEMAS
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
