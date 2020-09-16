@@ -9,7 +9,7 @@ A camada de autenticação/autorização da Plataforma é disponibilizada sobre 
 amplamente utilizado, principalmente por grandes players de plataforma, provendo acesso aos seus recursos de 
 forma segura para aplicações de terceiros. 
 
-Esse (https://www.digitalocean.com/community/tutorials/uma-introducao-ao-oauth-2-pt) pode ser útil para ajudar no entendimento
+Esse [artigo](https://www.digitalocean.com/community/tutorials/uma-introducao-ao-oauth-2-pt) pode ser útil para ajudar no entendimento
 
 # Executando a aplicação
 
