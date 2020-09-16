@@ -13,10 +13,10 @@ Esse [artigo](https://www.digitalocean.com/community/tutorials/uma-introducao-ao
 
 # Executando a aplicação
 
-Para executar a aplicação, é necessária a instalação das seguintes ferramentas:
+Para executar a aplicação, as seguintes ferramentas devem estar instaladas:
 
-* Java 8
-* Maven
+* Java 8 (ou superior)
+* Maven 3.5.4 (ou superior)
 
 No terminal, executar o comando:
 
