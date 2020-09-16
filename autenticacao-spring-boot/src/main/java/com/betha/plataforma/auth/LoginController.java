@@ -1,4 +1,4 @@
-package com.betha.plataforma;
+package com.betha.plataforma.auth;
 
 import com.betha.plataforma.auth.BethaAuthenticationHandler;
 import org.springframework.stereotype.Controller;
@@ -12,10 +12,10 @@ import java.io.IOException;
 @Controller
 public class LoginController {
 
-    private final BethaAuthenticationHandler bethaAuthenticationHandler;
+    private final BethaAuthenticationHandler authenticationHandler;
 
-    public LoginController(final BethaAuthenticationHandler bethaAuthenticationHandler) {
-        this.bethaAuthenticationHandler = bethaAuthenticationHandler;
+    public LoginController(final BethaAuthenticationHandler authenticationHandler) {
+        this.authenticationHandler = authenticationHandler;
     }
 
     @GetMapping(value = {"/", "/login"})
@@ -27,7 +27,7 @@ public class LoginController {
     public void redirecionarLoginBetha(final HttpServletRequest request, final HttpServletResponse response)
             throws IOException {
 
-        bethaAuthenticationHandler.redirectLogin(request, response);
+        authenticationHandler.redirectLogin(request, response);
     }
 
 }

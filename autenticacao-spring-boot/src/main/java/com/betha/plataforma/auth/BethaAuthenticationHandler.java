@@ -25,13 +25,13 @@ public class BethaAuthenticationHandler {
     private static final String TOKEN_SESSION_ATTRIBUTE = "authorization_token";
 
     private static final String AUTHORIZE_URL_TEMPLATE =
-            "%s/authorize?response_type=code&client_id=%s&redirect_uri=%s&scope=%s&code_challenge=%s&code_challenge_method=S256";
+        "%s/authorize?response_type=code&client_id=%s&redirect_uri=%s&scope=%s&code_challenge=%s&code_challenge_method=S256";
 
     private static final String EXCHANGE_CODE_PARAMS_TEMPLATE =
-            "grant_type=authorization_code&client_id=%s&redirect_uri=%s&code_verifier=%s&scope=%s&code=%s&client_secret=%s";
+        "grant_type=authorization_code&client_id=%s&redirect_uri=%s&code_verifier=%s&scope=%s&code=%s&client_secret=%s";
 
     private static final String REFRESH_TOKEN_PARAMS_TEMPLATE =
-            "grant_type=refresh_token&client_id=%s&redirect_uri=%s&refresh_token=%s&client_secret=%s";
+        "grant_type=refresh_token&client_id=%s&redirect_uri=%s&refresh_token=%s&client_secret=%s";
 
     public BethaAuthenticationHandler(final OauthChallengeUtils oauthChallengeUtils,
                                       final OauthApi oauthApi,
@@ -54,12 +54,12 @@ public class BethaAuthenticationHandler {
         final String challengeVerifier = oauthChallengeUtils.createAndSaveChallengeVerifier(request);
 
         final String redirect = String.format(
-                AUTHORIZE_URL_TEMPLATE,
-                urlOauth,
-                clientId,
-                redirectUri,
-                scopes,
-                challengeVerifier);
+            AUTHORIZE_URL_TEMPLATE,
+            urlOauth,
+            clientId,
+            redirectUri,
+            scopes,
+            challengeVerifier);
 
         response.sendRedirect(redirect);
     }
@@ -67,21 +67,21 @@ public class BethaAuthenticationHandler {
     public void exchangeAndSaveAuthorizationCode(final String code, final HttpServletRequest request) {
 
         final String parameters = String.format(
-                EXCHANGE_CODE_PARAMS_TEMPLATE,
-                clientId,
-                redirectUri,
-                oauthChallengeUtils.getVerifierFromSession(request),
-                scopes,
-                code,
-                clientSecret);
+            EXCHANGE_CODE_PARAMS_TEMPLATE,
+            clientId,
+            redirectUri,
+            oauthChallengeUtils.getVerifierFromSession(request),
+            scopes,
+            code,
+            clientSecret);
 
         final OauthToken token = oauthApi.exchangeAuthorizationCode(parameters);
-        request.getSession(true).setAttribute(TOKEN_SESSION_ATTRIBUTE, token);
+        storeInSession(token, request);
     }
 
     public Optional<OauthToken> getTokenFromSession(final HttpSession nullableSession) {
         return Optional.ofNullable(nullableSession)
-                .map(session -> (OauthToken) session.getAttribute(TOKEN_SESSION_ATTRIBUTE));
+            .map(session -> (OauthToken) session.getAttribute(TOKEN_SESSION_ATTRIBUTE));
     }
 
     public OauthToken getPresentTokenFromSession(final HttpSession session) {
@@ -89,21 +89,25 @@ public class BethaAuthenticationHandler {
     }
 
     public void refreshAndSaveAccessToken(final OauthToken token, final HttpServletRequest request)
-            throws RefreshTokenException {
+        throws RefreshTokenException {
 
         final String parameters = String.format(
-                REFRESH_TOKEN_PARAMS_TEMPLATE,
-                clientId,
-                redirectUri,
-                token.getRefreshToken(),
-                clientSecret);
+            REFRESH_TOKEN_PARAMS_TEMPLATE,
+            clientId,
+            redirectUri,
+            token.getRefreshToken(),
+            clientSecret);
 
         try {
             final OauthToken refreshedToken = oauthApi.refreshToken(parameters);
-            request.getSession(true).setAttribute(TOKEN_SESSION_ATTRIBUTE, refreshedToken);
+            storeInSession(refreshedToken, request);
 
         } catch (FeignException.FeignClientException e) {
             throw new RefreshTokenException();
         }
+    }
+
+    private static void storeInSession(final OauthToken token, final HttpServletRequest request) {
+        request.getSession(true).setAttribute(TOKEN_SESSION_ATTRIBUTE, token);
     }
 }
