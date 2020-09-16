@@ -26,9 +26,14 @@ mvn spring-boot:run
 
 Após, abrir o navegador em `http://localhost:8080`
 
+Na página de login, é demonstrado a possibilidade do usuário fazer login com as credenciais da aplicação ou escolher fazer login utilizando as credenciais da Betha. Clicando em "Acessar com Betha Sistemas", o usuário é redirecionado para a página de login da Betha, porém caso o mesmo já se encontre autenticado com a Betha, a autenticação com a aplicação ocorre de forma transparente. 
+
 <p align="center">
     <img src="login.png" width="350px" height="350px" />
 </p>
 
-Através do exemplo implementado é possível fazer login através da Plataforma Betha, e após o login realizado, o usuário 
-é redirecionado para uma tela de detalhes do perfil.
+Também foi implementado uma tela que demonstra como a aplicação poderia fazer o vínculo de um usuário de sua base com usuário da base da Betha:
+
+<p align="center">
+    <img src="login.png" width="350px" height="350px" />
+</p>
