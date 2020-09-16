@@ -11,8 +11,16 @@ forma segura para aplicações de terceiros.
 
 Esse [artigo](https://www.digitalocean.com/community/tutorials/uma-introducao-ao-oauth-2-pt) pode ser útil para ajudar no entendimento
 
-# Executando a aplicação
+# Implementação
+Nessa aplicação de exemplo foi implementado o fluxo conhecido como `Authorization code`, e as seguintes características podem ser observadas:
 
+* Durante o login com a Betha, existe um redirecionamento do usuário
+* Após login com sucesso, é retornado para uma página da aplicação (callback) junto com um código de autorização
+* Esse código de autorização é trocado por um `access token`
+* O access token é armazenado na sessão (mas poderia ser utilizado qualquer outro mecanismo)
+* A cada requisição é verificado se o token não expirou, caso tenha sido expirado é iniciado um processo de renovação
+
+# Executando a aplicação
 Para executar a aplicação, as seguintes ferramentas devem estar instaladas:
 
 * Java 8 (ou superior)
