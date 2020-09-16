@@ -26,5 +26,7 @@ mvn spring-boot:run
 
 Após, abrir o navegador em `http://localhost:8080`
 
+![](login.png)
+
 Através do exemplo implementado é possível fazer login através da Plataforma Betha, e após o login realizado, o usuário 
 é redirecionado para uma tela de detalhes do perfil.
