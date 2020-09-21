@@ -32,6 +32,8 @@ No terminal, executar o comando:
 mvn spring-boot:run
 ```
 
+Para fazer a autenticação, será necessário um usuário, que pode ser criado na [Central de Usuário](http://e-gov.betha.com.br/centraldousuario) se necessário.
+
 Após, abrir o navegador em `http://localhost:8080`
 
 Na página de login, é demonstrado a possibilidade do usuário fazer login com as credenciais da aplicação ou escolher fazer login utilizando as credenciais da Betha. Clicando em "Acessar com Betha Sistemas", o usuário é redirecionado para a página de login da Betha, porém caso o mesmo já se encontre autenticado com a Betha, a autenticação com a aplicação ocorre de forma transparente. 
