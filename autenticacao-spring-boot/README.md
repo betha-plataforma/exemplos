@@ -32,7 +32,7 @@ No terminal, executar o comando:
 mvn spring-boot:run
 ```
 
-Para fazer a autenticação, será necessário um usuário, que pode ser criado na [Central de Usuário](http://e-gov.betha.com.br/centraldousuario) se necessário.
+*Para fazer a autenticação, será necessário um usuário, que pode ser criado na [Central de Usuário](http://e-gov.betha.com.br/centraldousuario) se necessário.*
 
 Após, abrir o navegador em `http://localhost:8080`
 
