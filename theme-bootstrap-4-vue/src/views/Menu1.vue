@@ -165,9 +165,10 @@
         </div>
     </div>
 
-    <b-modal id="modal-cadastro" title="Adicionando registro" hide-footer size="lg">
+    <b-modal id="modal-cadastro" title="Adicionando registro" hide-footer size="lg" v-model="showModal">
         <b-tabs content-class="mt-3">
             <b-tab title="Dados pessoais" active>
+                <b-alert show dismissible>Exemplo de alerta com <a href="#" class="alert-link">link</a>.</b-alert>
                 <form>
                     <div class="row">
                         <div class="col">
@@ -274,10 +275,20 @@
             </b-tab>
         </b-tabs>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Salvar</button>
-            <button type="button" class="btn btn-secondary">Salvar e adicionar novo</button>
-            <button type="button" class="btn btn-secondary">Cancelar</button>
+            <button type="button" class="btn btn-primary" @click="showModal=false">Salvar</button>
+            <button type="button" class="btn btn-secondary" @click="showModal=false">Salvar e adicionar novo</button>
+            <button type="button" class="btn btn-secondary" @click="showModal=false">Cancelar</button>
         </div>
     </b-modal>
 </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            showModal: false
+        }
+    }
+}
+</script>
