@@ -20,6 +20,8 @@ Vue.config.productionTip = false
 
 // Diz para o Vue ignorar todos os componentes definidos com o prefixo "bth-"
 Vue.config.ignoredElements = [/bth-\w*/];
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 
 /**
  * https://github.com/ionic-team/stencil/blob/master/src/client/polyfills/index.js

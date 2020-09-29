@@ -4,7 +4,14 @@
 
     <div class="row">
         <div class="col">
-            <!-- <button class="btn btn-add btn-success" (click)="open(content)">Registro</button> -->
+            <b-button-group>
+                <b-dropdown right split text="Registro" variant="success" v-b-modal.modal-cadastro>
+                    <b-dropdown-item>Item 1</b-dropdown-item>
+                    <b-dropdown-item>Item 2</b-dropdown-item>
+                    <b-dropdown-divider></b-dropdown-divider>
+                    <b-dropdown-item>Item 3</b-dropdown-item>
+                </b-dropdown>
+            </b-button-group>
         </div>
     </div>
     <div class="row mb-0">
@@ -157,5 +164,120 @@
             </nav>
         </div>
     </div>
+
+    <b-modal id="modal-cadastro" title="Adicionando registro" hide-footer size="lg">
+        <b-tabs content-class="mt-3">
+            <b-tab title="Dados pessoais" active>
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <label for="nomeInput" class="required">Nome</label>
+                            <input type="text" class="form-control" id="nomeInput" placeholder="Informe o nome">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="cpfInput" class="required">CPF</label>
+                            <input type="text" class="form-control" id="cpfInput">
+                        </div>
+                        <div class="col-8">
+                            <label for="enderecoInput">Endereço</label>
+                            <input type="text" class="form-control" id="enderecoInput">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="valorInput" class="required">Valor</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">R$</span>
+                                </div>
+                                <input type="text" class="form-control" id="valorInput">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <label for="tamanhoInput" class="required">Tamanho</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="tamanhoInput">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">m²</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="anexoInput">Arquivo</label>
+                            <div class="input-group">
+                                <input id="anexoInput" type="text" class="form-control" placeholder="Escolha um arquivo de seu dispositivo" aria-label="Escolha um arquivo de seu dispositivo" aria-describedby="btnAnexo">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary btn-sm" type="button" id="btnAnexo"><i class="mdi mdi-paperclip"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>Escolha uma ou mais opções</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                    <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label>Escolha uma das opções</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                                    <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="descricaoInput">Descrição</label>
+                            <textarea class="form-control" name="descricaoInput" id="descricaoInput" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="col">
+                            <div class="custom-control custom-switch float-right">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">Receber atualizações</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </b-tab>
+            <b-tab title="Dados funcionais">
+
+            </b-tab>
+            <b-tab title="Aba desabilitada" disabled>
+
+            </b-tab>
+        </b-tabs>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Salvar</button>
+            <button type="button" class="btn btn-secondary">Salvar e adicionar novo</button>
+            <button type="button" class="btn btn-secondary">Cancelar</button>
+        </div>
+    </b-modal>
 </div>
 </template>
