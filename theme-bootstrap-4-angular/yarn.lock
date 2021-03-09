@@ -1125,11 +1125,16 @@
     to-fast-properties "^2.0.0"
 
 "@betha-plataforma/estrutura-componentes@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@betha-plataforma/estrutura-componentes/-/estrutura-componentes-1.0.0.tgz#89fa9ef3af103934980c77080ef397863528c82c"
-  integrity sha512-6NSpqgMoAQHKSI+GolTCFY3wI3OLhdaHaSSXVAvWsXyrHr4T107l5xpwOtNqu0tit/c1xRtvzPWI11j4TR7KyA==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@betha-plataforma/estrutura-componentes/-/estrutura-componentes-1.1.0.tgz#dfd9423d53de8de56bfbc5919cb5a81cca345c44"
+  integrity sha512-xJgVaFp/7+paOhPaFkGcIcxHCVGQZjDnaMJAIWJ95mPOclM4+e5BwyxUGiXeyqPr/iB/evQm9eH5EIlgKYhZiQ==
   dependencies:
     "@mdi/font" "~5.0.45"
+
+"@betha-plataforma/theme-bootstrap4@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@betha-plataforma/theme-bootstrap4/-/theme-bootstrap4-1.0.6.tgz#3ea13be764a245017c71a4ae854f54d7727dec4b"
+  integrity sha512-v5Rid3ni7yX7G7Aa2mUKfU1cuB1ztundNA3ncK2oV8AoAUGhjw2B0Uw+BxRiDxWyb+3CsPDGQGVyGXF5iMgv5A==
 
 "@istanbuljs/schema@^0.1.2":
   version "0.1.2"
