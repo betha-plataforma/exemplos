@@ -2,10 +2,9 @@
 
 <div class="row">
     <div class="col">
-        <!-- <button class="btn btn-add btn-success" (click)="open(content)">Registro</button> -->
         <div class="btn-group">
             <button type="button" class="btn btn-sm btn-add btn-success" title="Adicionar registro"
-                (click)="open(content)">Registro</button>
+                (click)="openModal()">Registro</button>
             <div class="btn-group" ngbDropdown role="group" placement="bottom-right" container="body">
                 <button class="btn btn-sm btn-success dropdown-toggle-split" ngbDropdownToggle><i
                         class="mdi mdi-chevron-down"></i></button>
@@ -177,17 +176,19 @@
     </div>
 </div>
 
-<ng-template #content let-modal>
+<!-- Template da modal -->
+<ng-template #registerModal let-modal>
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Adicionando registro</h4>
+        <h4 class="modal-title">Adicionando registro</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <ngb-tabset [destroyOnHide]="false">
-            <ngb-tab title="Dados pessoais">
-                <ng-template ngbTabContent>
+        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <a ngbNavLink>Dados pessoais</a>
+                <ng-template ngbNavContent>
                     <ngb-alert [type]="'info'">
                         Exemplo de alerta com <a href="#" class="alert-link">link</a>.
                     </ngb-alert>
@@ -299,19 +300,20 @@
                         </div>
                     </form>
                 </ng-template>
-            </ngb-tab>
-            <ngb-tab>
-                <ng-template ngbTabTitle>Dados funcionais</ng-template>
-                <ng-template ngbTabContent>
-
+            </li>
+            <li [ngbNavItem]="2">
+                <a ngbNavLink>Dados funcionais</a>
+                <ng-template ngbNavContent>
+                    <p>Aba de dados funcionais</p>
                 </ng-template>
-            </ngb-tab>
-            <ngb-tab title="Aba desabilitada" [disabled]="true">
-                <ng-template ngbTabContent>
+            </li>
+            <li [ngbNavItem]="3" disabled="true">
+                <a ngbNavLink>Aba desabilitada</a>
+                <ng-template ngbNavContent>
                 </ng-template>
-            </ngb-tab>
-        </ngb-tabset>
-
+            </li>
+        </ul>
+        <div [ngbNavOutlet]="nav"></div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Salvar</button>
