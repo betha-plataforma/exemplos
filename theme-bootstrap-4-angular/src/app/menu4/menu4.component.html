@@ -1,0 +1,326 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+    <div class="spinner-grow"></div>
+</div>
+
+<div class="row align-items-center py-3">
+    <div class="col-auto" hidden>
+        <button class="btn btn-link" title="Voltar">
+            <i class="mdi mdi-arrow-left"></i>
+        </button>
+    </div>
+    <div class="col">
+        <h4 class="m-0">Listagem</h4>
+    </div>
+</div>
+
+<div class="row align-items-center">
+    <div class="col-12 col-lg-auto">
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-success"
+                (click)="openModal()"><i class="mdi mdi-plus h6 m-0 mr-1" title="Adicionar"></i> Registro
+            </button>
+            <div class="btn-group" ngbDropdown role="group" placement="bottom-right" container="body">
+                <button class="btn btn-sm btn-success dropdown-toggle-split" ngbDropdownToggle><i
+                        class="mdi mdi-chevron-down"></i></button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <button ngbDropdownItem><i class="mdi mdi-cog mr-2"></i>Outra opção</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg text-lg-right my-3 my-lg-0">
+        <button class="btn btn-sm btn-link">
+            <i class="mdi mdi-cog mr-1"></i>
+            Opção 1
+        </button>
+        <button class="btn btn-sm btn-link">
+            <i class="mdi mdi-cog mr-1"></i>
+            Opção 2
+        </button>
+        <button class="btn btn-sm btn-link">
+            <i class="mdi mdi-cog mr-1"></i>
+            Opção 3
+        </button>
+        <div ngbDropdown placement="bottom-right" class="d-inline-block">
+            <button class="btn btn-sm btn-link" id="dropdownBasic12" ngbDropdownToggle>
+                <i class="mdi mdi-dots-vertical"></i>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic12">
+              <button ngbDropdownItem>
+                <i class="mdi mdi-cog mr-2"></i>Opção 4
+              </button>
+              <button ngbDropdownItem>
+                <i class="mdi mdi-cog mr-2"></i>Opção 5
+              </button>
+              <button ngbDropdownItem>
+                <i class="mdi mdi-cog mr-2"></i>Opção 6
+              </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-3">
+        <div class="input-group">
+            <input class="form-control mb-0" type="search" placeholder="O que você está buscando?">
+            <div class="input-group-append">
+                <button type="button" class="btn btn-sm btn-secondary">
+                    <i class="mdi mdi-magnify"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="col-12">
+        <div class="px-lg-1 p-2 py-lg-0 bg__gray--l30 small">
+            <div class="row m-0 align-items-center">
+                <div class="col-12 col-lg-auto my-1 my-lg-0">
+                    <p class="m-0 font-weight-bold text-uppercase mr-2">Filtrar por</p>
+                </div>
+                <div class="col-12 col-lg">
+                    <button class="btn btn-sm btn-link text-capitalize active">Todos</button>
+                    <button class="btn btn-sm btn-link text-capitalize">Filtro 1</button>
+                    <button class="btn btn-sm btn-link text-capitalize">Filtro 2</button>
+                    <button class="btn btn-sm btn-link text-capitalize">Filtro 3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mb-0">
+    <div class="col-12">
+        <table class="table table table-hover table-unbordered table-unstriped table-card table-pointer" style="table-layout: fixed;">
+            <thead>
+                <tr>
+                    <th width="30">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkTableAll">
+                            <label class="form-check-label" for="checkTableAll"></label>
+                        </div>
+                    </th>
+                    <th>
+                        <a href="">Coluna 1</a>
+                    </th>
+                    <th>
+                        <a href="">Coluna 2</a>
+                    </th>
+                    <th>
+                        <a href="">Coluna 3</a>
+                    </th>
+                    <th>
+                        <a href="">Coluna 4</a>
+                    </th>
+                    <th width="80">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkTable1">
+                            <label class="form-check-label" for="checkTable1"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="media align-items-center">
+                            <img class="size-2 rounded-circle mr-3" src="https://picsum.photos/id/237/200" alt="">
+                            <div class="media-body">
+                                <p class="m-0"><a href="#">Informação principal</a></p>
+                                <p class="m-0 small text-muted">Informação complementar</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Lorem ipsum</td>
+                    <td>
+                        <p class="m-0 text-truncate"><a href="#">Informação principal</a></p>
+                        <p class="m-0 small text-muted text-truncate">Informação complementar</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success ml-1">Pago</span>
+                    </td>
+                    <td class="text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkTable2">
+                            <label class="form-check-label" for="checkTable2"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="media align-items-center">
+                            <img class="size-2 rounded-circle mr-3" src="https://picsum.photos/id/237/200" alt="">
+                            <div class="media-body">
+                                <p class="m-0"><a href="#">Informação principal</a></p>
+                                <p class="m-0 small text-muted">Informação complementar</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Lorem ipsum</td>
+                    <td>
+                        <p class="m-0 text-truncate"><a href="#">Informação principal</a></p>
+                        <p class="m-0 small text-muted text-truncate">Informação complementar</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-danger ml-1">Atrasado</span>  
+                    </td>
+                    <td class="text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-link" id="dropdownBasic2" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkTable3">
+                            <label class="form-check-label" for="checkTable3"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="media align-items-center">
+                            <img class="size-2 rounded-circle mr-3" src="https://picsum.photos/id/237/200" alt="">
+                            <div class="media-body">
+                                <p class="m-0"><a href="#">Informação principal</a></p>
+                                <p class="m-0 small text-muted">Informação complementar</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Lorem ipsum</td>
+                    <td>
+                        <p class="m-0 text-truncate"><a href="#">Informação principal</a></p>
+                        <p class="m-0 small text-muted text-truncate">Informação complementar</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success ml-1">Pago</span>
+                    </td>
+                    <td class="text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-link" id="dropdownBasic3" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <nav class="float-right">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#"><i
+                            class="mdi mdi-chevron-left mr-1"></i>Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Próxima<i
+                            class="mdi mdi-chevron-right ml-1"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- Template da modal -->
+<ng-template #registerModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Adicionando registro</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12">
+                    <ul ngbNav #wizard="ngbNav" class="nav-tabs nav-wizard">
+                        <li [ngbNavItem]="1">
+                        <a ngbNavLink class="checked">Etapa 1</a>
+                        <ng-template ngbNavContent>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="nomeInput" class="required">Nome</label>
+                                    <input type="text" class="form-control" id="nomeInput" placeholder="Informe o nome">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="cpfInput" class="required">CPF</label>
+                                    <input type="text" class="form-control" id="cpfInput">
+                                </div>
+                                <div class="col-8">
+                                    <label for="enderecoInput">Endereço</label>
+                                    <input type="text" class="form-control" id="enderecoInput">
+                                </div>
+                            </div>
+                        </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="checked">Etapa 2</a>
+                            <ng-template ngbNavContent>
+                                <p>Conteúdo da etapa 2</p>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="3">
+                            <a ngbNavLink>Etapa 3</a>
+                            <ng-template ngbNavContent>
+                                Conteúdo da etapa 3
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="4" disabled="true">
+                            <a ngbNavLink>Etapa 4</a>
+                            <ng-template ngbNavContent>
+                                Conteúdo da etapa 4
+                            </ng-template>
+                        </li>
+                    </ul>
+                    <div [ngbNavOutlet]="wizard" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="modal-footer">
+            <div class="row w-100 mb-0">
+                <div class="col">
+                    <button class="btn btn-secondary mr-1" title="Anterior" hidden>
+                        <i class="mdi mdi-arrow-left"></i> <span class="d-none d-lg-inline-block ml-2">Anterior</span>
+                    </button>
+                    <button class="btn btn-secondary" title="Anterior">
+                        <span class="d-none d-lg-inline-block mr-2">Próximo</span> <i class="mdi mdi-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary ml-1" disabled>Salvar</button>
+                    <button type="button" class="btn btn-secondary ml-1">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    
+    </form>
+</ng-template>

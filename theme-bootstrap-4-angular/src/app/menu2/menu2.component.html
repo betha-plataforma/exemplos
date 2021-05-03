@@ -1,2 +1,201 @@
-<h4>Menu 2</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed qui corporis provident veritatis, tempore saepe esse commodi labore aliquid aut nostrum in quas ipsum eos aspernatur quasi nulla? Laudantium distinctio, velit optio iure porro facere vitae ducimus itaque. Ut voluptatem aspernatur dolore, esse cupiditate minus quasi maxime tempora consequuntur.</p>
+<div class="spinner-grow-backdrop loader-fadeout">
+    <div class="spinner-grow"></div>
+</div>
+
+<div class="form-row mb-3 align-items-center py-3">
+        <div class="col-auto">
+            <button class="btn btn-link" title="Voltar">
+                <i class="mdi mdi-arrow-left"></i>
+            </button>
+        </div>
+        <div class="col">
+            <h4 class="m-0">Formulário</h4>
+        </div>
+    </div>
+    <form>
+        <div class="form-row flex-fill justify-content-center">
+            <div class="col-12 col-lg-8">
+                <ul ngbNav #nav="ngbNav" class="nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink>Dados pessoais</a>
+                        <ng-template ngbNavContent>
+                            <ngb-alert [type]="'info'">
+                                Exemplo de alerta com <a href="#" class="alert-link">link</a>.
+                            </ngb-alert>
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="nomeInput" class="required">Nome</label>
+                                        <input type="text" class="form-control" id="nomeInput" placeholder="Informe o nome">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="sexoSelect" class="required">Pressão sanguínea</label>
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" placeholder="PAS">
+                                            <input class="form-control" type="text" placeholder="PAD">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="sexoSelect" class="required">Atividade</label>
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" value="Inativo" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="cpfInput" class="required">CPF</label>
+                                        <input type="text" class="form-control" id="cpfInput">
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="enderecoInput">Endereço</label>
+                                        <input type="text" class="form-control" id="enderecoInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col col-md-3">
+                                    <div class="form-group">
+                                        <label for="valorInput" class="required">Valor</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">R$</span>
+                                            </div>
+                                            <input type="number" class="form-control" id="valorInput">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-3">
+                                    <div class="form-group">
+                                        <label for="tamanhoInput" class="required">Tamanho</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tamanhoInput">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">m²</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6" hidden>
+                                    <div class="form-group">
+                                        <div class="form-row mb-3 m-0">
+                                            <div class="col-12">
+                                                <label for="exampleFormControlFile1">Documento</label>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="btn btn-secondary" for="my-file-selector">
+                                                    <input class="position-absolute d-none h-100 w-100" id="my-file-selector" type="file" multiple>
+                                                    <i class="mdi mdi-paperclip mr-2"></i>Anexar arquivo
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="anexoInput">Arquivo</label>
+                                        <div class="input-group">
+                                            <input id="anexoInput" type="text" class="form-control"
+                                                placeholder="Escolha um arquivo de seu dispositivo"
+                                                aria-label="Escolha um arquivo de seu dispositivo" aria-describedby="btnAnexo" disabled>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary px-3 position-relative btn-sm" type="button">
+                                                    <label class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style="top:0; left:0;" for="btnAnexo">
+                                                        <input class="position-absolute d-none h-100 w-100" id="btnAnexo" type="file">
+                                                        <i class="mdi mdi-paperclip"></i>
+                                                    </label>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-sm mb-3">
+                                    <label>Escolha uma ou mais opções</label>
+                                    <div class="d-block">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                            <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm mb-3">
+                                    <label>Escolha uma das opções</label>
+                                    <div class="d-block">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                                            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="descricaoInput">Descrição</label>
+                                        <textarea class="form-control" name="descricaoInput" id="descricaoInput" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row mb-3 mb-0">
+                                <div class="col-12">
+                                    <div class="custom-control custom-switch float-right">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label" for="customSwitch1">Receber atualizações</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink>Dados funcionais</a>
+                        <ng-template ngbNavContent>
+                            <p>Aba de dados funcionais</p>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="3" disabled="true">
+                        <a ngbNavLink>Aba desabilitada</a>
+                        <ng-template ngbNavContent>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav"></div>
+            </div>
+        </div>
+
+        <div class="container-fluid bg__gray--l40 border-top position-sticky bg-info mt-5 py-3" style="bottom:0; z-index: 1020;">
+            <div class="form-row mb-3 justify-content-end mb-0">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary ml-1">Salvar</button>
+                    <button type="button" class="btn btn-secondary ml-1">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>

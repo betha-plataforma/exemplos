@@ -1373,10 +1373,10 @@
   dependencies:
     "@mdi/font" "~5.0.45"
 
-"@betha-plataforma/theme-bootstrap4@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@betha-plataforma/theme-bootstrap4/-/theme-bootstrap4-1.0.6.tgz#3ea13be764a245017c71a4ae854f54d7727dec4b"
-  integrity sha512-v5Rid3ni7yX7G7Aa2mUKfU1cuB1ztundNA3ncK2oV8AoAUGhjw2B0Uw+BxRiDxWyb+3CsPDGQGVyGXF5iMgv5A==
+"@betha-plataforma/theme-bootstrap4@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@betha-plataforma/theme-bootstrap4/-/theme-bootstrap4-1.1.0.tgz#36e6c02d4334190fe2a26fa2122e979b85257daa"
+  integrity sha512-QMmBGD+iycXiNLgrys7yRT5UGn0JqUiyw9B/rOhmwzI2CQVysZD12m4dulyp0cCanRASmnj5O1sxvPsr9bAsGw==
 
 "@istanbuljs/schema@^0.1.2":
   version "0.1.2"

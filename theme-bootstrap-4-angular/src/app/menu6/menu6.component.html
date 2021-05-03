@@ -1,0 +1,127 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+    <div class="spinner-grow"></div>
+</div>
+
+<div class="row align-items-center py-3">
+    <div class="col-auto" hidden>
+        <button class="btn btn-link" title="Voltar">
+            <i class="mdi mdi-arrow-left"></i>
+        </button>
+    </div>
+    <div class="col">
+        <h4 class="m-0">Configurações</h4>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-12 col-lg-3">
+        <div class="d-flex">
+            <ul ngbNav #abaVertical="ngbNav" class="nav-tabs" orientation="vertical">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>Aba 1</a>
+                <ng-template ngbNavContent>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <h5 class="tx__gray--d20 mb-3"><i class="mdi mdi-cog mr-2"></i>Subtítulo 1</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="custom-control custom-switch float-right">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label" for="customSwitch1">&nbsp;</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <p class="m-0">Este é o título da opção a ser ativada</p>
+                                    <p class="m-0 small text-muted">Este é um texto explicativo sobre a opção atual em detalhes para o usuário.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-3">
+                                <div class="col-auto">
+                                    <div class="custom-control custom-switch float-right">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                        <label class="custom-control-label" for="customSwitch2">&nbsp;</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <p class="m-0">Este é o título da opção a ser ativada</p>
+                                    <p class="m-0 small text-muted">Este é um texto explicativo sobre a opção atual em detalhes para o usuário.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <h5 class="tx__gray--d20 mb-3"><i class="mdi mdi-cog mr-2"></i>Subtítulo 2</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="form-group">
+                                <label>Tempo de inatividade</label>
+                                <select class="custom-select">
+                                    <option selected>10 minutos</option>
+                                    <option>20 minutos</option>
+                                    <option>30 minutos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <h5 class="tx__gray--d20 mb-3"><i class="mdi mdi-cog mr-2"></i>Subtítulo 3</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio1" value="option1" checked>
+                                <label class="form-check-label" for="inlineRadio1">Opção 1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio2" value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Opção 2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio3" value="option3" disabled>
+                                <label class="form-check-label" for="inlineRadio3">Opção 3 (disabled)</label>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>Aba 2</a>
+                <ng-template ngbNavContent>
+                  <p>Dolor sit amet</p>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3" disabled="true">
+                <a ngbNavLink>Aba desabilitada</a>
+                <ng-template ngbNavContent>
+                </ng-template>
+              </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-12 col-lg-9">
+        <div [ngbNavOutlet]="abaVertical"></div>
+    </div>
+</div>
+

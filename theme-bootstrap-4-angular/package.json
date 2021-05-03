@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
     "@betha-plataforma/estrutura-componentes": "^1.0.0",
-    "@betha-plataforma/theme-bootstrap4": "^1.0.6",
+    "@betha-plataforma/theme-bootstrap4": "^1.1.0",
     "@mdi/font": "^5.0.45",
     "@ng-bootstrap/ng-bootstrap": "9.0.2",
     "bootstrap": "^4.5.2",

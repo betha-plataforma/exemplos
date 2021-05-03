@@ -1,0 +1,321 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+    <div class="spinner-grow"></div>
+</div>
+
+<!-- Template da modal -->
+<ng-template #registerModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Salvando arquivo</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12">
+                    <label class="sr-only" for="anexoInput">Arquivo</label>
+                    <div class="input-group">
+                        <input id="anexoInput" type="text" class="form-control"
+                            placeholder="Escolha um arquivo de seu dispositivo"
+                            aria-label="Escolha um arquivo de seu dispositivo" aria-describedby="btnAnexo" disabled>
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary px-3 position-relative btn-sm" type="button">
+                                <label class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style="top:0; left:0;" for="btnAnexo">
+                                    <input class="position-absolute d-none h-100 w-100" id="btnAnexo" type="file">
+                                    <i class="mdi mdi-paperclip"></i>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 py-3">
+                    <ngb-progressbar [value]="80"></ngb-progressbar>
+                    <p class="m-0 mt-1 text-muted">Carregando...</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Salvar</button>
+            <button type="button" class="btn btn-secondary" (click)="modal.close()">Cancelar</button>
+        </div>
+    </form>
+</ng-template>
+
+<div class="form-row align-items-center py-3">
+    <div class="col-auto" hidden>
+        <button class="btn btn-link" title="Voltar">
+            <i class="mdi mdi-arrow-left"></i>
+        </button>
+    </div>
+    <div class="col">
+        <h4 class="m-0">Lista de cards</h4>
+    </div>
+    <div class="col-12 col-lg-auto my-3 my-lg-0">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Grupo</a></li>
+              <li class="breadcrumb-item"><a href="#">Subgrupo</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Item</li>
+            </ol>
+          </nav>
+    </div>
+</div>
+
+<div class="form-row align-items-center mb-3">
+    <div class="col">
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-success" (click)="openModal()" aria-label="Adicionar arquivo">
+                <i class="mdi mdi-plus h6 m-0 mr-1" title="Adicionar"></i> Arquivo
+            </button>
+        </div>
+    </div>
+    <div class="col-auto">
+        <!-- Avatares aninhados -->
+        <div class="d-block pr-1">
+            <div class="d-inline-block mr-n1">
+                <img class="rounded-circle border" width="30px;" height="30px;" alt="" src="https://picsum.photos/id/220/200">
+            </div>
+            <div class="d-inline-block mr-n1">
+                <img class="rounded-circle border" width="30px;" height="30px;" alt="" src="https://picsum.photos/id/221/200">
+            </div>
+            <div class="d-inline-block mr-n1">
+                <img class="rounded-circle border" width="30px;" height="30px;" alt="" src="https://picsum.photos/id/222/200">
+            </div>
+            <div class="d-inline-block mr-n1">
+                <img class="rounded-circle border" width="30px;" height="30px;" alt="" src="https://picsum.photos/id/223/200">
+            </div>
+        </div>
+        <!-- .Avatares aninhados -->
+    </div>
+    <div class="col-12 col-lg-3 my-3 my-lg-0">
+        <div class="input-group">
+            <input class="form-control mb-0" type="search" placeholder="O que você está buscando?">
+            <div class="input-group-append">
+                <button type="button" class="btn btn-secondary">
+                    <i class="mdi mdi-magnify"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden" style="max-height: 180px; height:180px;">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/230/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/231/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden" style="max-height: 180px; height:180px;">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/232/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden" style="max-height: 180px; height:180px;">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/233/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden" style="max-height: 180px; height:180px;">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/234/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden" style="max-height: 180px; height:180px;">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/235/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden" style="max-height: 180px; height:180px;">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/236/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="card mb-2">
+            <div class="card-body p-0 overflow-hidden" style="max-height: 180px; height:180px;">
+                <img class="w-100" style="max-height: 180px; height:180px; object-fit: cover;" alt="" src="https://picsum.photos/id/238/200">
+            </div>
+            <div class="card-footer bg__gray--l40">
+                <div class="row m-0 align-items-center">
+                    <div class="col-10">
+                        <p class="text-truncate m-0">Este é um arquivo</p>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-sm btn-link" id="dropdownBasic1" ngbDropdownToggle>
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem><i class="mdi mdi-pencil mr-2"></i>Editar</button>
+                                <div class="dropdown-divider"></div>
+                                <button ngbDropdownItem><i class="mdi mdi-trash-can-outline mr-2"></i>Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

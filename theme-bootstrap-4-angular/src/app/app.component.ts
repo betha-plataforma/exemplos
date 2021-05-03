@@ -18,12 +18,23 @@ export class AppComponent {
   @ViewChild('novidades', { static: true }) novidadesElement: ElementRef<HTMLBthNovidadesElement>;
 
   private opcoesMenu: Array<OpcaoMenu> = [
-    { id: 'listagem', descricao: 'Listagem', icone: 'view-list', rota: '/', possuiPermissao: true },
+    { id: 'Menu0', descricao: 'Visão geral', icone: 'home', rota: '/', possuiPermissao: true },
     {
-      id: '', descricao: 'Menu 2', icone: 'cog', possuiPermissao: true,
+      id: '', descricao: 'Seções', icone: 'book-open-page-variant', possuiPermissao: true,
       submenus: [
-        { id: 'menu2', descricao: 'Submenu 1', rota: '/menu2', possuiPermissao: true },
-        { id: 'menu3', descricao: 'Submenu 2', rota: '/menu3', possuiPermissao: true },
+        { id: 'menu3', descricao: 'Dashboard', rota: '/menu3', possuiPermissao: true },
+
+        { id: 'menu4', descricao: 'Listagem', rota: '/menu4', possuiPermissao: true },
+        { id: 'menu7', descricao: 'Lista de cards', rota: '/menu7', possuiPermissao: true },
+
+        { id: 'menu1', descricao: 'Timeline', rota: '/menu1', possuiPermissao: true },
+        { id: 'menu2', descricao: 'Formulário', rota: '/menu2', possuiPermissao: true },
+        
+        
+        { id: 'menu5', descricao: 'Sem registros', rota: '/menu5', possuiPermissao: true },
+        { id: 'menu6', descricao: 'Configurações', rota: '/menu6', possuiPermissao: true },
+        
+        //{ id: 'menu8', descricao: 'Wizard', rota: '/menu8', possuiPermissao: true }
       ]
     },
   ];
@@ -89,6 +100,11 @@ export class AppComponent {
     this.router.events.subscribe(routeEvent => {
       if (routeEvent instanceof NavigationEnd) {
         const route: NavigationEnd = routeEvent;
+        if (route.url === '/contexto') {
+          this.appElement.nativeElement.opcoes = [];
+        } else {
+            this.appElement.nativeElement.opcoes = this.opcoesMenu;
+        }
         this.setMenuAtivoPorRota(route.url);
       }
     });
