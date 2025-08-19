@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pessoas
+    username: pessoas
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+cadastro-unico:
+  base-url: https://plataforma-cadastro-unico.betha.cloud
+  token: 56c4555a-8754-41ab-beba-f847f7b67bc1
+  user-access: cNlf1PlnxX51sW-1t53gBm3R_In477phxV2V9OPNDqs=
+
+oauth2:
+  token-info-url: https://plataforma-oauth.betha.cloud/auth/oauth2/tokeninfo
+
+webhook:
+  jwt-secret: chavesecreta
+  jwt-algorithm: HS256
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+server:
+  port: 8081
