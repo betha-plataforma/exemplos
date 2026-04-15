@@ -1,0 +1,44 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+  <div class="spinner-grow"></div>
+</div>
+
+<div class="row align-items-center py-3">
+  <div class="col">
+    <h4 class="m-0">Timeline</h4>
+  </div>
+</div>
+
+<div class="row">
+  @for (grupo of grupos; track grupo.mes) {
+    <div class="col-12 mb-3">
+      <div class="d-flex">
+        <ul class="nav nav-tabs nav-timeline flex-column">
+          <li>
+            <span class="badge">{{ grupo.mes }}</span>
+          </li>
+          <li>
+            <div>
+              <p>{{ grupo.dia }}</p>
+            </div>
+          </li>
+          @for (evento of grupo.eventos; track evento.hora) {
+            <li>
+              <div>
+                <small>{{ evento.hora }}</small>
+              </div>
+              <p>
+                @if (evento.possuiLinkHistorico) {
+                  <button type="button" class="btn btn-link p-0 align-baseline">
+                    Link para o histórico
+                  </button>
+                  <br />
+                }
+                {{ evento.descricao }}
+              </p>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  }
+</div>

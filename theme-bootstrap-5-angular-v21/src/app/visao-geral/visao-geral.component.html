@@ -1,0 +1,50 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+  <div class="spinner-grow"></div>
+</div>
+
+<div class="row align-items-center py-3">
+  <div class="col">
+    <h4 class="m-0">Visão geral</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <p class="m-0">
+      Neste projeto, você encontrará demonstrações de estruturas básicas que podem servir de base
+      para o seu projeto.
+    </p>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-12">
+    <h5>Projetando</h5>
+  </div>
+</div>
+
+<div class="row">
+  @for (principio of principios; track principio.titulo) {
+    <div class="col-12 col-sm-6 col-lg-4 pb-2">
+      <div class="card card-body h-100">
+        <i [class]="principio.iconeClass" aria-hidden="true"></i>
+        <p class="h6 mb-0">{{ principio.titulo }}</p>
+      </div>
+    </div>
+  }
+</div>
+
+<div class="row mt-4">
+  <div class="col-12">
+    <h5>Programando</h5>
+    <p>Ao começar uma solução, você deverá seguir a ordem:</p>
+    <ol class="mb-0">
+      <li><strong>Login</strong></li>
+      <li>
+        <strong>Seleção de contexto</strong>:
+        <a routerLink="/contexto">Veja exemplo<i class="mdi mdi-open-in-new ms-1" aria-hidden="true"></i></a>
+      </li>
+      <li><strong>Sua solução</strong></li>
+    </ol>
+  </div>
+</div>

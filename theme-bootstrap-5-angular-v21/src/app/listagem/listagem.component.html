@@ -1,0 +1,277 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+  <div class="spinner-grow"></div>
+</div>
+
+<div class="row align-items-center py-3">
+  <div class="col">
+    <h4 class="m-0">Listagem</h4>
+  </div>
+</div>
+
+<div class="row align-items-center">
+  <div class="col-12 col-lg-auto">
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-success" (click)="abrirModal()">
+        <i class="mdi mdi-plus h6 m-0 me-1" aria-hidden="true"></i>Registro
+      </button>
+      <div ngbDropdown class="btn-group" role="group" placement="bottom-end" container="body">
+        <button
+          class="btn btn-sm btn-success"
+          ngbDropdownToggle
+          aria-label="Abrir opções de registro">
+          <i class="mdi mdi-chevron-down"></i>
+        </button>
+        <div ngbDropdownMenu>
+          <button ngbDropdownItem type="button">
+            <i class="mdi mdi-cog me-2" aria-hidden="true"></i>Outra opção
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg my-3 my-lg-0 text-lg-end">
+    <button type="button" class="btn btn-sm btn-link">
+      <i class="mdi mdi-cog me-1" aria-hidden="true"></i>Opção 1
+    </button>
+    <button type="button" class="btn btn-sm btn-link">
+      <i class="mdi mdi-cog me-1" aria-hidden="true"></i>Opção 2
+    </button>
+    <button type="button" class="btn btn-sm btn-link">
+      <i class="mdi mdi-cog me-1" aria-hidden="true"></i>Opção 3
+    </button>
+    <div ngbDropdown placement="bottom-end" class="d-inline-block">
+      <button class="btn btn-sm btn-link" id="listagem-opcoes" ngbDropdownToggle aria-label="Mais opções">
+        <i class="mdi mdi-dots-vertical" aria-hidden="true"></i>
+      </button>
+      <div ngbDropdownMenu aria-labelledby="listagem-opcoes">
+        <button ngbDropdownItem type="button">
+          <i class="mdi mdi-cog me-2" aria-hidden="true"></i>Opção 4
+        </button>
+        <button ngbDropdownItem type="button">
+          <i class="mdi mdi-cog me-2" aria-hidden="true"></i>Opção 5
+        </button>
+        <button ngbDropdownItem type="button">
+          <i class="mdi mdi-cog me-2" aria-hidden="true"></i>Opção 6
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-3">
+    <label class="visually-hidden" for="buscaListagem">Pesquisar na listagem</label>
+    <div class="input-group">
+      <input id="buscaListagem" class="form-control" type="search" placeholder="O que você está buscando?" />
+      <button type="button" class="btn btn-sm btn-secondary" aria-label="Pesquisar">
+        <i class="mdi mdi-magnify" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row my-3">
+  <div class="col-12">
+    <div class="px-lg-1 p-2 py-lg-0 bg__gray--l30 small">
+      <div class="row m-0 align-items-center">
+        <div class="col-12 col-lg-auto my-1 my-lg-0">
+          <p class="m-0 fw-bold text-uppercase me-2">Filtrar por</p>
+        </div>
+        <div class="col-12 col-lg">
+          @for (filtro of filtros; track filtro) {
+          <button type="button" class="btn btn-sm btn-link text-capitalize" [class.active]="filtroAtivo() === filtro"
+            [attr.aria-pressed]="filtroAtivo() === filtro" (click)="filtroAtivo.set(filtro)">
+            {{ filtro }}
+          </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-0">
+  <div class="col-12">
+    <table class="table table-hover table-card table-pointer" style="table-layout: fixed;">
+      <thead>
+        <tr>
+          <th width="30">
+            <div class="form-check">
+              <input id="checkTableAll" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="checkTableAll">
+                <span class="visually-hidden">Selecionar todos os registros</span>
+              </label>
+            </div>
+          </th>
+          <th>
+            <button type="button" class="btn btn-link p-0">Coluna 1</button>
+          </th>
+          <th>
+            <button type="button" class="btn btn-link p-0">Coluna 2</button>
+          </th>
+          <th>
+            <button type="button" class="btn btn-link p-0">Coluna 3</button>
+          </th>
+          <th>
+            <button type="button" class="btn btn-link p-0">Coluna 4</button>
+          </th>
+          <th width="80"></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (registro of registrosFiltrados(); track registro.id) {
+        <tr>
+          <td>
+            <div class="form-check">
+              <input [attr.id]="'checkTable' + registro.id" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" [attr.for]="'checkTable' + registro.id">
+                <span class="visually-hidden">Selecionar registro {{ registro.id }}</span>
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="d-flex align-items-center">
+              <img class="rounded-circle me-3" width="40" height="40" [src]="registro.avatarUrl" alt="" />
+              <div>
+                <button type="button" class="btn btn-link p-0">{{ registro.nome }}</button>
+                <p class="m-0 small text-muted">{{ registro.complemento }}</p>
+              </div>
+            </div>
+          </td>
+          <td>{{ registro.coluna2 }}</td>
+          <td>
+            <button type="button" class="btn btn-link p-0 text-truncate">
+              {{ registro.coluna3Principal }}
+            </button>
+            <p class="m-0 small text-muted text-truncate">{{ registro.coluna3Complemento }}</p>
+          </td>
+          <td>
+            <span [class]="registro.badgeClass">{{ registro.status }}</span>
+          </td>
+          <td class="text-end">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-link" [attr.id]="'registro-acoes-' + registro.id" ngbDropdownToggle
+                aria-label="Abrir ações do registro">
+                <i class="mdi mdi-dots-vertical" aria-hidden="true"></i>
+              </button>
+              <div ngbDropdownMenu [attr.aria-labelledby]="'registro-acoes-' + registro.id">
+                <button ngbDropdownItem type="button">
+                  <i class="mdi mdi-pencil me-2" aria-hidden="true"></i>Editar
+                </button>
+                <div class="dropdown-divider"></div>
+                <button ngbDropdownItem type="button">
+                  <i class="mdi mdi-trash-can-outline me-2" aria-hidden="true"></i>Excluir
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <nav class="float-end" aria-label="Paginação da listagem">
+      <ul class="pagination">
+        <li class="page-item">
+          <button type="button" class="page-link">
+            <i class="mdi mdi-chevron-left me-1" aria-hidden="true"></i>Anterior
+          </button>
+        </li>
+        <li class="page-item"><button type="button" class="page-link">1</button></li>
+        <li class="page-item"><button type="button" class="page-link">2</button></li>
+        <li class="page-item"><button type="button" class="page-link">3</button></li>
+        <li class="page-item">
+          <button type="button" class="page-link">
+            Próxima<i class="mdi mdi-chevron-right ms-1" aria-hidden="true"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<ng-template #registerModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Adicionando registro 123</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+
+  <form [formGroup]="formularioRegistro">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-12">
+          <ul ngbNav #wizardModal="ngbNav" class="nav-tabs nav-wizard" [activeId]="etapaModalAtiva()"
+            (activeIdChange)="etapaModalAtiva.set($event)">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink type="button" class="checked">Etapa 1</a>
+              <ng-template ngbNavContent>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="modalNome" class="form-label required">Nome</label>
+                    <input id="modalNome" type="text" class="form-control" placeholder="Informe o nome"
+                      formControlName="nome" />
+                  </div>
+
+                  <div class="col-12 col-lg-4">
+                    <label for="modalCpf" class="form-label required">CPF</label>
+                    <input id="modalCpf" type="text" class="form-control" formControlName="cpf" />
+                  </div>
+
+                  <div class="col-12 col-lg-8">
+                    <label for="modalEndereco" class="form-label">Endereço</label>
+                    <input id="modalEndereco" type="text" class="form-control" formControlName="endereco" />
+                  </div>
+                </div>
+              </ng-template>
+            </li>
+
+            <li [ngbNavItem]="2">
+              <a ngbNavLink type="button" class="checked">Etapa 2</a>
+              <ng-template ngbNavContent>
+                <p class="mb-0">Conteúdo da etapa 2</p>
+              </ng-template>
+            </li>
+
+            <li [ngbNavItem]="3">
+              <a ngbNavLink type="button">Etapa 3</a>
+              <ng-template ngbNavContent>
+                <p class="mb-0">Conteúdo da etapa 3</p>
+              </ng-template>
+            </li>
+
+            <li [ngbNavItem]="4" [disabled]="true">
+              <a ngbNavLink type="button">Etapa 4</a>
+              <ng-template ngbNavContent>
+                <p class="mb-0">Conteúdo da etapa 4</p>
+              </ng-template>
+            </li>
+          </ul>
+
+          <div [ngbNavOutlet]="wizardModal" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="row w-100 align-items-center">
+        <div class="col">
+          <button type="button" class="btn btn-secondary" (click)="avancarEtapaModal()">
+            <span class="d-none d-lg-inline-block me-2">Próximo</span>
+            <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary" [disabled]="etapaModalAtiva() !== 3">
+            Salvar
+          </button>
+          <button type="button" class="btn btn-secondary ms-1" (click)="modal.close()">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-template>

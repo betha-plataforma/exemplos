@@ -1,0 +1,25 @@
+<bth-selecao-contexto
+  #selecaoContexto
+  id="selecao-contexto-entidades"
+  placeholder-pesquisa="Qual entidade você está buscando?"
+>
+  <h4 class="mt-5" slot="cabecalho">Selecione a entidade que deseja acessar</h4>
+
+  <img
+    ngSrc="img/help.svg"
+    width="200"
+    height="160"
+    alt="Você precisa de ajuda?"
+    slot="sem_resultado"
+  />
+
+  <h4 slot="sem_resultado">Título customizado</h4>
+
+  <span slot="sem_resultado">
+    Parágrafo customizado com <a routerLink="/visao-geral">link também</a>
+  </span>
+
+  <div slot="rodape" class="text-end">
+    <a routerLink="/visao-geral">Liberar nova entidade</a>
+  </div>
+</bth-selecao-contexto>

@@ -1,0 +1,252 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+  <div class="spinner-grow"></div>
+</div>
+
+<div class="row align-items-center py-3">
+  <div class="col">
+    <h4 class="m-0">Formulário</h4>
+  </div>
+</div>
+
+<form [formGroup]="formulario">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <ul
+        ngbNav
+        #nav="ngbNav"
+        class="nav-tabs"
+        [activeId]="abaAtiva()"
+        (activeIdChange)="abaAtiva.set($event)"
+      >
+        <li [ngbNavItem]="1">
+          <button ngbNavLink type="button">Dados pessoais</button>
+          <ng-template ngbNavContent>
+            <ngb-alert type="info">
+              Exemplo de alerta com <a routerLink="/visao-geral">link</a>.
+            </ngb-alert>
+
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="nomeInput" class="form-label required">Nome</label>
+                <input
+                  id="nomeInput"
+                  type="text"
+                  class="form-control"
+                  placeholder="Informe o nome"
+                  formControlName="nome"
+                />
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <label for="pasInput" class="form-label required">Pressão sanguínea</label>
+                <div class="input-group">
+                  <input
+                    id="pasInput"
+                    class="form-control"
+                    type="text"
+                    placeholder="PAS"
+                    formControlName="pas"
+                  />
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="PAD"
+                    formControlName="pad"
+                    aria-label="Pressão arterial diastólica"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <label for="atividadeInput" class="form-label required">Atividade</label>
+                <div class="input-group">
+                  <input
+                    id="atividadeInput"
+                    class="form-control"
+                    type="text"
+                    value="Inativo"
+                    [disabled]="true"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <label for="cpfInput" class="form-label required">CPF</label>
+                <input id="cpfInput" type="text" class="form-control" formControlName="cpf" />
+              </div>
+
+              <div class="col-12 col-lg-8">
+                <label for="enderecoInput" class="form-label">Endereço</label>
+                <input
+                  id="enderecoInput"
+                  type="text"
+                  class="form-control"
+                  formControlName="endereco"
+                />
+              </div>
+
+              <div class="col-12 col-md-3">
+                <label for="valorInput" class="form-label required">Valor</label>
+                <div class="input-group">
+                  <span class="input-group-text">R$</span>
+                  <input
+                    id="valorInput"
+                    type="number"
+                    class="form-control"
+                    formControlName="valor"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12 col-md-3">
+                <label for="tamanhoInput" class="form-label required">Tamanho</label>
+                <div class="input-group">
+                  <input
+                    id="tamanhoInput"
+                    type="text"
+                    class="form-control"
+                    formControlName="tamanho"
+                  />
+                  <span class="input-group-text">m²</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <label for="anexoInput" class="form-label">Arquivo</label>
+                <div class="input-group">
+                  <input
+                    id="anexoInput"
+                    type="text"
+                    class="form-control"
+                    placeholder="Escolha um arquivo de seu dispositivo"
+                    aria-label="Escolha um arquivo de seu dispositivo"
+                    [disabled]="true"
+                  />
+                  <label class="btn btn-secondary px-3 position-relative btn-sm" for="btnAnexo">
+                    <input id="btnAnexo" class="visually-hidden" type="file" />
+                    <i class="mdi mdi-paperclip" aria-hidden="true"></i>
+                    <span class="visually-hidden">Selecionar arquivo</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6">
+                <label class="form-label d-block">Escolha uma ou mais opções</label>
+                <div class="form-check form-check-inline">
+                  <input
+                    id="inlineCheckbox1"
+                    class="form-check-input"
+                    type="checkbox"
+                    formControlName="opcao1"
+                  />
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    id="inlineCheckbox2"
+                    class="form-check-input"
+                    type="checkbox"
+                    formControlName="opcao2"
+                  />
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    id="inlineCheckbox3"
+                    class="form-check-input"
+                    type="checkbox"
+                    formControlName="opcao3"
+                    [disabled]="true"
+                  />
+                  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6">
+                <label class="form-label d-block">Escolha uma das opções</label>
+                <div class="form-check form-check-inline">
+                  <input
+                    id="inlineRadio1"
+                    class="form-check-input"
+                    type="radio"
+                    value="1"
+                    formControlName="escolha"
+                  />
+                  <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    id="inlineRadio2"
+                    class="form-check-input"
+                    type="radio"
+                    value="2"
+                    formControlName="escolha"
+                  />
+                  <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    id="inlineRadio3"
+                    class="form-check-input"
+                    type="radio"
+                    value="3"
+                    formControlName="escolha"
+                    [disabled]="true"
+                  />
+                  <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="descricaoInput" class="form-label">Descrição</label>
+                <textarea
+                  id="descricaoInput"
+                  class="form-control"
+                  rows="3"
+                  formControlName="descricao"
+                ></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check form-switch float-end">
+                  <input
+                    id="receberAtualizacoes"
+                    class="form-check-input"
+                    type="checkbox"
+                    formControlName="receberAtualizacoes"
+                  />
+                  <label class="form-check-label" for="receberAtualizacoes">
+                    Receber atualizações
+                  </label>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </li>
+
+        <li [ngbNavItem]="2">
+          <button ngbNavLink type="button">Dados funcionais</button>
+          <ng-template ngbNavContent>
+            <p class="mb-0">Aba de dados funcionais</p>
+          </ng-template>
+        </li>
+
+        <li [ngbNavItem]="3" [disabled]="true">
+          <button ngbNavLink type="button">Aba desabilitada</button>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="nav" class="pt-3"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg__gray--l40 border-top position-sticky mt-5 py-3" style="bottom: 0; z-index: 1020;">
+    <div class="row justify-content-end">
+      <div class="col-auto">
+        <button type="button" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-secondary ms-1">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</form>

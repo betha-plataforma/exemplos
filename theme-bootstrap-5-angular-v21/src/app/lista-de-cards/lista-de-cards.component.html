@@ -1,0 +1,145 @@
+<div class="spinner-grow-backdrop loader-fadeout">
+  <div class="spinner-grow"></div>
+</div>
+
+<ng-template #registerModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Salvando arquivo</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+
+  <form>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-12">
+          <label class="visually-hidden" for="anexoInputModal">Arquivo</label>
+          <div class="input-group">
+            <input
+              id="anexoInputModal"
+              type="text"
+              class="form-control"
+              placeholder="Escolha um arquivo de seu dispositivo"
+              aria-label="Escolha um arquivo de seu dispositivo"
+              [disabled]="true"
+            />
+            <label class="btn btn-secondary px-3 position-relative btn-sm" for="btnAnexoModal">
+              <input id="btnAnexoModal" class="visually-hidden" type="file" />
+              <i class="mdi mdi-paperclip" aria-hidden="true"></i>
+              <span class="visually-hidden">Selecionar arquivo</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="col-12 py-3">
+          <ngb-progressbar [value]="80"></ngb-progressbar>
+          <p class="m-0 mt-1 text-muted">Carregando...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Salvar</button>
+      <button type="button" class="btn btn-secondary" (click)="modal.close()">Cancelar</button>
+    </div>
+  </form>
+</ng-template>
+
+<div class="row align-items-center py-3">
+  <div class="col">
+    <h4 class="m-0">Lista de cards</h4>
+  </div>
+  <div class="col-12 col-lg-auto my-3 my-lg-0">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><button type="button" class="btn btn-link p-0">Grupo</button></li>
+        <li class="breadcrumb-item"><button type="button" class="btn btn-link p-0">Subgrupo</button></li>
+        <li class="breadcrumb-item active" aria-current="page">Item</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="row align-items-center mb-3">
+  <div class="col">
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-success" (click)="abrirModal()" aria-label="Adicionar arquivo">
+        <i class="mdi mdi-plus h6 m-0 me-1" aria-hidden="true"></i>Arquivo
+      </button>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="d-block pe-1">
+      @for (avatar of avatares; track avatar) {
+        <div class="d-inline-block me-n1">
+          <img class="rounded-circle border" width="30" height="30" alt="" [src]="avatar" />
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-3 my-3 my-lg-0">
+    <label class="visually-hidden" for="buscaCards">Pesquisar na lista de cards</label>
+    <div class="input-group">
+      <input
+        id="buscaCards"
+        class="form-control"
+        type="search"
+        placeholder="O que você está buscando?"
+      />
+      <button type="button" class="btn btn-secondary" aria-label="Pesquisar">
+        <i class="mdi mdi-magnify" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  @for (arquivo of arquivos; track arquivo.id) {
+    <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+      <div class="card mb-2">
+        <div class="card-body p-0 overflow-hidden" style="height: 180px;">
+          <img
+            class="w-100"
+            style="height: 180px; object-fit: cover;"
+            [src]="arquivo.imagemUrl"
+            alt=""
+          />
+        </div>
+        <div class="card-footer bg__gray--l40">
+          <div class="row m-0 align-items-center">
+            <div class="col-10">
+              <p class="text-truncate m-0">{{ arquivo.titulo }}</p>
+            </div>
+            <div class="col-2 text-end">
+              <div ngbDropdown class="d-inline-block">
+                <button
+                  class="btn btn-sm btn-link"
+                  [attr.id]="'arquivo-acoes-' + arquivo.id"
+                  ngbDropdownToggle
+                  aria-label="Abrir ações do arquivo"
+                >
+                  <i class="mdi mdi-dots-vertical" aria-hidden="true"></i>
+                </button>
+                <div ngbDropdownMenu [attr.aria-labelledby]="'arquivo-acoes-' + arquivo.id">
+                  <button ngbDropdownItem type="button">
+                    <i class="mdi mdi-pencil me-2" aria-hidden="true"></i>Editar
+                  </button>
+                  <div class="dropdown-divider"></div>
+                  <button ngbDropdownItem type="button">
+                    <i class="mdi mdi-trash-can-outline me-2" aria-hidden="true"></i>Excluir
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
