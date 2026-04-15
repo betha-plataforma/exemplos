@@ -1,59 +1,72 @@
-# ThemeBootstrap5AngularV21
+# theme-bootstrap-5-angular-v21
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
+Exemplo de aplicação Angular 21 que demonstra a integração do tema Bootstrap 5 da Betha com os web components do pacote [@betha-plataforma/estrutura-componentes](https://github.com/betha-plataforma/estrutura-componentes).
 
-## Development server
+## O que este projeto demonstra
 
-To start a local development server, run:
+- shell da aplicação com `bth-app` e menu lateral
+- registro dos custom elements Betha em [src/app/app.config.ts](./src/app/app.config.ts)
+- integração entre eventos dos web components e o roteamento Angular em [src/app/app.ts](./src/app/app.ts)
+- uso de componentes standalone com lazy loading por rota
+- páginas de exemplo para visão geral, dashboard, listagem, lista de cards, timeline, formulário, sem registros, configurações, wizard e seleção de contexto
 
-```bash
-ng serve
-```
+## Stack utilizada
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 21.2
+- TypeScript 5.9
+- Bootstrap 5.3
+- ng-bootstrap 20
+- Vitest 4
+- [@betha-plataforma/theme-bootstrap5](https://www.npmjs.com/package/@betha-plataforma/theme-bootstrap5)
+- [@betha-plataforma/estrutura-componentes](https://www.npmjs.com/package/@betha-plataforma/estrutura-componentes)
+- [@mdi/font](https://www.npmjs.com/package/@mdi/font)
 
-## Code scaffolding
+## Estrutura principal
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [src/main.ts](./src/main.ts): bootstrap da aplicação
+- [src/app/app.config.ts](./src/app/app.config.ts): aplica os polyfills e registra os custom elements com `defineCustomElements()`
+- [src/app/app.ts](./src/app/app.ts): configura menu, utilitários, notificações, novidades, conta do usuário e o vínculo com o `Router`
+- [src/app/app.html](./src/app/app.html): define a casca da aplicação com `bth-app`
+- [angular.json](./angular.json): importa os estilos globais do Bootstrap, Material Design Icons, `theme-bootstrap5`, `estrutura-componentes` e [src/styles.scss](./src/styles.scss)
 
-```bash
-ng generate component component-name
-```
+## Rotas disponíveis
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `/visao-geral`
+- `/dashboard`
+- `/listagem`
+- `/lista-de-cards`
+- `/timeline`
+- `/formulario`
+- `/sem-registros`
+- `/configuracoes`
+- `/wizard`
+- `/contexto`
 
-```bash
-ng generate --help
-```
+## Inicializando
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Instale as dependências:
 
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Inicie o servidor de desenvolvimento em `http://localhost:4200`:
 
-## Additional Resources
+```bash
+npm start
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Scripts úteis
+
+- `npm start`: inicia a aplicação em modo de desenvolvimento
+- `npm run build`: gera a build de produção em `dist/`
+- `npm run watch`: recompila a aplicação em modo desenvolvimento a cada alteração
+- `npm test`: executa os testes unitários com Vitest
+
+## Observações
+
+- O projeto usa `npm` como gerenciador de pacotes e declara `npm@11.12.1` em [package.json](./package.json).
+- Os dados de autorização, usuário e utilitários definidos em [src/app/app.ts](./src/app/app.ts) são exemplos para demonstrar a integração com os componentes Betha.
+- Os assets públicos são servidos a partir da pasta [public](./public).
+- Não há suíte de testes e2e configurada neste exemplo.
+s
