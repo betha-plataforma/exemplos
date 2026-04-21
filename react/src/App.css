@@ -1,0 +1,31 @@
+bth-app {
+  min-height: 100vh;
+}
+
+bth-selecao-contexto {
+  display: block;
+  min-height: 100vh;
+}
+
+.dropdown-toggle.no-caret::after {
+  display: none;
+}
+
+.file-card-preview,
+.file-card-image {
+  height: 180px;
+}
+
+.file-card-image {
+  object-fit: cover;
+}
+
+.sticky-actions {
+  bottom: 0;
+  z-index: 1020;
+}
+
+.btn .mdi,
+.dropdown-item .mdi {
+  line-height: 1;
+}

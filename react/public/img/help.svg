@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Ajuda</title>
+  <desc id="desc">Ilustração com balão de conversa e símbolo de interrogação.</desc>
+  <rect width="240" height="180" rx="24" fill="#eef6fb"/>
+  <path d="M64 42h112c15.464 0 28 12.536 28 28v34c0 15.464-12.536 28-28 28h-43l-25 18v-18H64c-15.464 0-28-12.536-28-28V70c0-15.464 12.536-28 28-28Z" fill="#fff" stroke="#7faadc" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="120" cy="86" r="24" fill="#ecf7fb" stroke="#a7c4e7" stroke-width="4"/>
+  <path d="M111 79c1.2-7.2 6.8-11 14.5-11 7.1 0 12.5 4.4 12.5 11 0 5.4-3 8.6-8 11.4-4.4 2.5-5.5 4.1-5.5 7.6v2" fill="none" stroke="#2d6ea3" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="120" cy="112" r="3.5" fill="#2d6ea3"/>
+  <path d="M72 144h96" fill="none" stroke="#c9d8e8" stroke-width="4" stroke-linecap="round"/>
+</svg>
