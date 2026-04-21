@@ -1,6 +1,6 @@
 import { SIDE_ICON_CARDS, SUMMARY_CARDS, TOP_ICON_CARDS } from '../data/examples'
 import type { IconCardData, SummaryCardData } from '../data/examples'
-import { LoadingOverlay, PageHeader } from './shared'
+import { LoadingOverlay, PageHeader } from '../components/shared'
 
 function SummaryCard({ card }: { card: SummaryCardData }) {
   return (

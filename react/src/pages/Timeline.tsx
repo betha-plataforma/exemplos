@@ -1,5 +1,5 @@
 import { TIMELINE_GROUPS } from '../data/examples'
-import { LoadingOverlay, PageHeader } from './shared'
+import { LoadingOverlay, PageHeader } from '../components/shared'
 
 export function Timeline() {
   return (

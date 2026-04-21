@@ -1,38 +1,12 @@
 import { useState } from 'react'
-import { Dropdown, Modal, ProgressBar } from 'react-bootstrap'
+import { Modal, ProgressBar } from 'react-bootstrap'
 import { CARD_AVATARS, FILE_CARDS } from '../data/examples'
-import { LoadingOverlay, MdiIcon, PageHeader } from './shared'
+import { ItemActions } from '../components/ItemActions'
+import { LoadingOverlay, MdiIcon, PageHeader } from '../components/shared'
 
 type ModalProps = {
   show: boolean
   onHide: () => void
-}
-
-function FileActions({ id }: { id: number }) {
-  return (
-    <Dropdown align="end" className="d-inline-block">
-      <Dropdown.Toggle
-        variant="link"
-        size="sm"
-        className="no-caret"
-        id={`arquivo-acoes-${id}`}
-        aria-label="Abrir ações do arquivo"
-      >
-        <MdiIcon name="dots-vertical" />
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item as="button" type="button">
-          <MdiIcon name="pencil" className="me-2" />
-          Editar
-        </Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item as="button" type="button">
-          <MdiIcon name="trash-can-outline" className="me-2" />
-          Excluir
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-  )
 }
 
 function FileModal({ show, onHide }: ModalProps) {
@@ -170,7 +144,7 @@ export function ListaDeCards() {
                     <p className="text-truncate m-0">{file.title}</p>
                   </div>
                   <div className="col-2 text-end">
-                    <FileActions id={file.id} />
+                    <ItemActions id={file.id} ariaLabel="Abrir ações do arquivo" size="sm" />
                   </div>
                 </div>
               </div>

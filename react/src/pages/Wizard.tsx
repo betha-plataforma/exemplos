@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav, Tab } from 'react-bootstrap'
-import { LoadingOverlay, MdiIcon, PageHeader } from './shared'
+import { LoadingOverlay, MdiIcon, PageHeader } from '../components/shared'
 
 function WizardFormFields() {
   return (
@@ -61,11 +61,10 @@ function WizardFormFields() {
 }
 
 export function Wizard() {
-  const [activeStep, setActiveStep] = useState('1')
-  const stepNumber = Number(activeStep)
+  const [activeStep, setActiveStep] = useState(1)
 
-  const next = () => setActiveStep(String(Math.min(stepNumber + 1, 3)))
-  const previous = () => setActiveStep(String(Math.max(stepNumber - 1, 1)))
+  const next = () => setActiveStep(Math.min(activeStep + 1, 3))
+  const previous = () => setActiveStep(Math.max(activeStep - 1, 1))
 
   return (
     <>
@@ -75,41 +74,41 @@ export function Wizard() {
       <form>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
-            <Tab.Container activeKey={activeStep} onSelect={(key) => key && setActiveStep(key)}>
+            <Tab.Container activeKey={activeStep} onSelect={(key) => key && setActiveStep(Number(key))}>
               <Nav variant="tabs" className="nav-wizard">
                 <Nav.Item>
-                  <Nav.Link eventKey="1" className="checked">
+                  <Nav.Link eventKey={1} className="checked">
                     Etapa 1
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="2"  className="checked">
+                  <Nav.Link eventKey={2} className="checked">
                     Etapa 2
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="3" >
+                  <Nav.Link eventKey={3}>
                     Etapa 3
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="4"  disabled>
+                  <Nav.Link eventKey={4} disabled>
                     Etapa 4
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
 
               <Tab.Content className="mt-3">
-                <Tab.Pane eventKey="1">
+                <Tab.Pane eventKey={1}>
                   <WizardFormFields />
                 </Tab.Pane>
-                <Tab.Pane eventKey="2">
+                <Tab.Pane eventKey={2}>
                   <p className="mb-0">Conteúdo da etapa 2</p>
                 </Tab.Pane>
-                <Tab.Pane eventKey="3">
+                <Tab.Pane eventKey={3}>
                   <p className="mb-0">Conteúdo da etapa 3</p>
                 </Tab.Pane>
-                <Tab.Pane eventKey="4">
+                <Tab.Pane eventKey={4}>
                   <p className="mb-0">Conteúdo da etapa 4</p>
                 </Tab.Pane>
               </Tab.Content>
@@ -124,7 +123,7 @@ export function Wizard() {
                 type="button"
                 className="btn btn-secondary me-1"
                 title="Anterior"
-                disabled={stepNumber === 1}
+                disabled={activeStep === 1}
                 onClick={previous}
               >
                 <MdiIcon name="arrow-left" />
@@ -136,7 +135,7 @@ export function Wizard() {
               </button>
             </div>
             <div className="col-auto">
-              <button type="button" className="btn btn-primary" disabled={stepNumber !== 3}>
+              <button type="button" className="btn btn-primary" disabled={activeStep !== 3}>
                 Salvar
               </button>
               <button type="button" className="btn btn-secondary ms-1">

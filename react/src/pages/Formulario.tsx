@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Alert, Nav, Tab } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { LoadingOverlay, MdiIcon, PageHeader } from './shared'
+import { LoadingOverlay, MdiIcon, PageHeader } from '../components/shared'
 
 export function Formulario() {
-  const [activeTab, setActiveTab] = useState('1')
+  const [activeTab, setActiveTab] = useState(1)
 
   return (
     <>
@@ -14,27 +14,27 @@ export function Formulario() {
       <form>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
-            <Tab.Container activeKey={activeTab} onSelect={(key) => key && setActiveTab(key)}>
+            <Tab.Container activeKey={activeTab} onSelect={(key) => key && setActiveTab(Number(key))}>
               <Nav variant="tabs">
                 <Nav.Item>
-                  <Nav.Link eventKey="1" as="button" type="button">
+                  <Nav.Link eventKey={1} as="button" type="button">
                     Dados pessoais
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="2" as="button" type="button">
+                  <Nav.Link eventKey={2} as="button" type="button">
                     Dados funcionais
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="3" as="button" type="button" disabled>
+                  <Nav.Link eventKey={3} as="button" type="button" disabled>
                     Aba desabilitada
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
 
               <Tab.Content className="pt-3">
-                <Tab.Pane eventKey="1">
+                <Tab.Pane eventKey={1}>
                   <Alert variant="info">
                     Exemplo de alerta com <Link to="/visao-geral">link</Link>.
                   </Alert>
@@ -235,10 +235,10 @@ export function Formulario() {
                   </div>
                 </Tab.Pane>
 
-                <Tab.Pane eventKey="2">
+                <Tab.Pane eventKey={2}>
                   <p className="mb-0">Aba de dados funcionais</p>
                 </Tab.Pane>
-                <Tab.Pane eventKey="3"></Tab.Pane>
+                <Tab.Pane eventKey={3}></Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { LoadingOverlay, PageHeader } from './shared'
+import { LoadingOverlay, PageHeader } from '../components/shared'
 
 export function SemRegistros() {
   return (

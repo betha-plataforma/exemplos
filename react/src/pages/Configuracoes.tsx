@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Nav, Tab } from 'react-bootstrap'
-import { LoadingOverlay, MdiIcon, PageHeader } from './shared'
+import { LoadingOverlay, MdiIcon, PageHeader } from '../components/shared'
 
 export function Configuracoes() {
-  const [activeTab, setActiveTab] = useState('1')
+  const [activeTab, setActiveTab] = useState(1)
 
   return (
     <>
@@ -14,20 +14,20 @@ export function Configuracoes() {
         <div className="row mt-3">
           <div className="col-12 col-lg-3">
             <div className="d-flex">
-              <Tab.Container activeKey={activeTab} onSelect={(key) => key && setActiveTab(key)}>
+              <Tab.Container activeKey={activeTab} onSelect={(key) => key && setActiveTab(Number(key))}>
                 <Nav variant="tabs" className="flex-column">
                   <Nav.Item>
-                    <Nav.Link eventKey="1" as="button" type="button">
+                    <Nav.Link eventKey={1} as="button" type="button">
                       Aba 1
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="2" as="button" type="button">
+                    <Nav.Link eventKey={2} as="button" type="button">
                       Aba 2
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="3" as="button" type="button" disabled>
+                    <Nav.Link eventKey={3} as="button" type="button" disabled>
                       Aba desabilitada
                     </Nav.Link>
                   </Nav.Item>
@@ -37,9 +37,9 @@ export function Configuracoes() {
           </div>
 
           <div className="col-12 col-lg-9">
-            <Tab.Container activeKey={activeTab} onSelect={(key) => key && setActiveTab(key)}>
+            <Tab.Container activeKey={activeTab} onSelect={(key) => key && setActiveTab(Number(key))}>
               <Tab.Content className="pt-3 pt-lg-0">
-                <Tab.Pane eventKey="1">
+                <Tab.Pane eventKey={1}>
                   <div className="row mb-3">
                     <div className="col-12">
                       <h5 className="tx__gray--d20 mb-3">
@@ -142,10 +142,10 @@ export function Configuracoes() {
                   </div>
                 </Tab.Pane>
 
-                <Tab.Pane eventKey="2">
+                <Tab.Pane eventKey={2}>
                   <p className="mb-0">Dolor sit amet</p>
                 </Tab.Pane>
-                <Tab.Pane eventKey="3"></Tab.Pane>
+                <Tab.Pane eventKey={3}></Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </div>

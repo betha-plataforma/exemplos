@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PRINCIPLES } from '../data/examples'
-import { LoadingOverlay, MdiIcon, PageHeader } from './shared'
+import { LoadingOverlay, MdiIcon, PageHeader } from '../components/shared'
 
 export function VisaoGeral() {
   return (
