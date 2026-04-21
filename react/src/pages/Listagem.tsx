@@ -59,22 +59,22 @@ function RegisterModal({ show, onHide }: ModalProps) {
               <Tab.Container activeKey={activeStep} onSelect={(key) => key && setActiveStep(key)}>
                 <Nav variant="tabs" className="nav-wizard">
                   <Nav.Item>
-                    <Nav.Link eventKey="1" as="button" type="button" className="checked">
+                    <Nav.Link eventKey="1" className="checked">
                       Etapa 1
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="2" as="button" type="button" className="checked">
+                    <Nav.Link eventKey="2" className="checked">
                       Etapa 2
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="3" as="button" type="button">
+                    <Nav.Link eventKey="3">
                       Etapa 3
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="4" as="button" type="button" disabled>
+                    <Nav.Link eventKey="4" disabled>
                       Etapa 4
                     </Nav.Link>
                   </Nav.Item>
