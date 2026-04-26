@@ -1,4 +1,4 @@
-# theme-bootstrap-5-angular-v21
+# app-angular
 
 Exemplo de aplicação Angular 21 que demonstra a integração do tema Bootstrap 5 da Betha com os web components do pacote [@betha-plataforma/estrutura-componentes](https://github.com/betha-plataforma/estrutura-componentes).
 

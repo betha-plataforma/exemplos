@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
-import { applyPolyfills, defineCustomElements } from '../node_modules/@betha-plataforma/estrutura-componentes/loader';
+import { applyPolyfills, defineCustomElements } from '@betha-plataforma/estrutura-componentes/loader';
 
 import './assets';
 
