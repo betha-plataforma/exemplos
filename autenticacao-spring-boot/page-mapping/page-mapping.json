@@ -1,0 +1,102 @@
+[
+  {
+    "contexts": [
+      "database",
+      "entity"
+    ],
+    "constraints": [
+      {
+        "id": "Menu1Page",
+        "description": "Cadastro de exemplos",
+        "resources": [
+          {
+            "urlPattern": "/api/examples",
+            "methods": [
+              "GET"
+            ]
+          },
+          {
+            "accessControll": "create",
+            "urlPattern": "/api/examples",
+            "methods": [
+              "POST"
+            ]
+          },
+          {
+            "accessControll": "edit",
+            "urlPattern": "/api/examples/.*",
+            "methods": [
+              "PUT"
+            ]
+          },
+          {
+            "accessControll": "delete",
+            "urlPattern": "/api/examples/.*",
+            "methods": [
+              "DELETE"
+            ]
+          }
+        ],
+        "accessControll": [
+          {
+            "id": "create",
+            "description": "Incluir exemplos"
+          },
+          {
+            "id": "edit",
+            "description": "Alterar exemplos"
+          },
+          {
+            "id": "delete",
+            "description": "Excluir exemplos"
+          }
+        ]
+      },
+      {
+        "id": "Menu2Page",
+        "description": "Menu 2",
+        "resources": [
+          {
+            "urlPattern": "/api/menu2",
+            "methods": [
+              "GET"
+            ]
+          }
+        ],
+        "accessControll": []
+      },
+      {
+        "id": "Menu3Page",
+        "description": "Menu 3",
+        "resources": [
+          {
+            "urlPattern": "/api/menu3",
+            "methods": [
+              "GET"
+            ]
+          }
+        ],
+        "accessControll": []
+      }
+    ],
+    "resources": [
+      {
+        "urlPattern": "/api/.*",
+        "methods": [
+          "OPTIONS"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "description": "Funcionalidades do exemplo",
+        "constraints": [
+          "Menu1Page",
+          "Menu2Page",
+          "Menu3Page"
+        ],
+        "groups": []
+      }
+    ]
+  }
+]

@@ -2,15 +2,30 @@ spring:
   thymeleaf:
     cache: false
 
+server:
+  servlet:
+    session:
+      cookie:
+        name: "${BETHA_SESSION_COOKIE_NAME}"
+        http-only: true
+        same-site: lax
+
 betha:
   auth:
     oauth:
       client:
-        id: "34bf8868-b799-4dea-9eaf-8fa327572423"
-        secret_id: "3fdd79d3-a121-43a6-b2ce-1914372e8d24"
-        redirect: "http://localhost:8080/callback"
-        scopes: "contas-usuarios.suite,user-accounts.suite"
+        id: "${BETHA_CLIENT_ID}"
+        secret: "${BETHA_CLIENT_SECRET}"
+        callback: "${BETHA_CALLBACK_URL}"
+        redirect: "${BETHA_APP_URL}"
+        logout-continue: "${BETHA_LOGOUT_CONTINUE_URL}"
+        scopes: "${BETHA_OAUTH_SCOPES}"
+  system:
+    id: "${BETHA_SYSTEM_ID}"
   services:
-    login: "https://service-login.cloud.betha.com.br/servicelogin"
-    oauth: "https://oauth.cloud.betha.com.br/auth/oauth2"
-    usuarios: "https://useraccounts.cloud.betha.com.br/user-accounts/v0.1/api"
+    login: "${BETHA_LOGIN_URL}"
+    oauth: "${BETHA_OAUTH_URL}"
+    user-accounts: "${BETHA_USER_ACCOUNTS_URL}"
+    sessions: "${BETHA_SESSOES_URL}"
+    authorizations: "${BETHA_AUTORIZACOES_URL}"
+    manager: "${BETHA_GERENCIADOR_AUTORIZACOES_URL}"

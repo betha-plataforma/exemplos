@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <title>Autorizações Betha - AngularJS</title>
+
+    <style>
+      body {
+        background-color: #fff!important;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <bth-app menu-vertical>
+
+      <bth-marca-produto slot="menu_marca_produto" produto="Autorizações AngularJS"></bth-marca-produto>
+
+      <bth-utilitarios slot="menu_ferramentas"></bth-utilitarios>
+      <bth-ajuda slot="menu_ferramentas"></bth-ajuda>
+      <bth-conta-usuario slot="menu_ferramentas"></bth-conta-usuario>
+
+      <main slot="container_aplicacao" class="container-fluid mt-2">
+        <ui-view></ui-view>
+      </main>
+
+    </bth-app>
+
+    <section id="app-loading" class="integration-overlay">
+      <div class="integration-card">
+        <h2>Carregando acesso</h2>
+        <p>Consultando usuário, entidades e permissões na Plataforma Betha.</p>
+      </div>
+    </section>
+
+    <section id="context-selection" class="integration-overlay" hidden>
+      <div class="integration-card">
+        <bth-selecao-contexto id="betha-context-selector" placeholder-pesquisa="Qual entidade você está buscando?">
+          <h2 slot="cabecalho">Selecione a entidade que deseja acessar</h2>
+          <p slot="sem_resultado">Nenhum acesso válido foi encontrado para este sistema.</p>
+        </bth-selecao-contexto>
+      </div>
+    </section>
+
+    <section id="access-restriction" class="integration-overlay" hidden>
+      <div class="integration-card">
+        <h2 id="restriction-title">Acesso indisponível</h2>
+        <div id="restriction-message"></div>
+        <div id="term-confirmation" hidden>
+          <label>
+            <input id="term-checkbox" type="checkbox">
+            Li e aceito o termo de responsabilidade.
+          </label>
+        </div>
+        <p id="restriction-error" class="integration-error" hidden></p>
+        <div class="integration-actions">
+          <button id="restriction-login" type="button" class="btn btn-default">Fazer novo login</button>
+          <button id="term-accept" type="button" class="btn btn-primary" hidden disabled>Concluir e acessar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exemplo importando env.js -->
+    <script src="https://variaveis.test.plataforma.betha.cloud/env.js"></script>
+
+  </body>
+
+</html>

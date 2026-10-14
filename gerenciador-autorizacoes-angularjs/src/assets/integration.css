@@ -1,0 +1,87 @@
+.integration-overlay {
+  align-items: center;
+  background: rgba(247, 249, 252, .98);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 10000;
+}
+
+.integration-overlay[hidden] {
+  display: none;
+}
+
+.integration-card {
+  background: #fff;
+  border: 1px solid #dce3eb;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(36, 54, 72, .15);
+  max-height: calc(100vh - 48px);
+  max-width: 680px;
+  overflow: auto;
+  padding: 24px;
+  width: 100%;
+}
+
+.integration-card h2 {
+  margin-top: 0;
+}
+
+.integration-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.integration-error {
+  color: #b42318;
+  margin-top: 12px;
+}
+
+.permissions-note {
+  background: #f0f5fb;
+  border-left: 4px solid #2b6cb0;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+.crud-toolbar {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.crud-toolbar label {
+  flex: 1;
+  min-width: 240px;
+}
+
+.crud-toolbar input {
+  width: 100%;
+}
+
+.crud-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.crud-table th,
+.crud-table td {
+  border-bottom: 1px solid #dce3eb;
+  padding: 10px;
+  text-align: left;
+}
+
+.crud-table .actions {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.crud-table button + button {
+  margin-left: 6px;
+}
