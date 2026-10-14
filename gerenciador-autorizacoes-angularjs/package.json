@@ -1,0 +1,25 @@
+{
+  "name": "gerenciador-autorizacoes-angularjs",
+  "version": "1.0.0",
+  "description": "Frontend AngularJS de exemplo para integração com as autorizações da Plataforma Betha",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development",
+    "start": "webpack serve --mode development --open"
+  },
+  "devDependencies": {
+    "@mdi/font": "^5.0.45",
+    "@uirouter/angularjs": "^1.0.25",
+    "angular": "^1.7.9",
+    "@betha-plataforma/estrutura-componentes": "^1.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  }
+}
